@@ -34,7 +34,7 @@ export default class List_The_News extends React.Component {
 			Meta.NEWS_META.About.map((page,i)=>{
 			if(page.id === PAGEID)
 				{ 
-					console.log(page.acf.news_header)
+					//console.log(page.acf.news_header)
 					News_Header = page.acf.news_header
 				}
 			})

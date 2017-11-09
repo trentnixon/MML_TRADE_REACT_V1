@@ -11,7 +11,7 @@ export default class GlobalText extends React.Component {
 	
 		//const IconPath = 'http://ec2-54-252-234-67.ap-southeast-2.compute.amazonaws.com/wp-content/uploads/2017/10/';
 		//VIDEO-WHITE.png
-		console.log(this.props.MajorIcons)
+		//console.log(this.props.MajorIcons)
 		
 		// Create Major Icons
 		if(this.props.MajorIcons){

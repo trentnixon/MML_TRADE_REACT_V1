@@ -32,11 +32,11 @@ export default class News_Filter extends React.Component {
 		
 				this.props.NEWS_ITEMS.map((article,i)=>{
 			
-					console.log(article.categories, this.state.cat, article.categories.indexOf(parseInt(this.state.cat)));
+					//console.log(article.categories, this.state.cat, article.categories.indexOf(parseInt(this.state.cat)));
 					
 					// Check to see if the article is in the selected Category
 					CategoryCheck = article.categories.indexOf(parseInt(this.state.cat))
-					console.log(CategoryCheck);
+					//console.log(CategoryCheck);
 					if(CategoryCheck != -1 || this.state.cat == "")
 						{
 							let  title = article.title.rendered;
@@ -94,7 +94,7 @@ export default class News_Filter extends React.Component {
 			if(this.state.Cat_list == false){
 				Selectcategories = this.CreateCategoryFilter(nextProps.FILTERED_NEWS_ITEMS.Categories)	
 			}
-			console.log(nextProps)
+			//console.log(nextProps)
 			
 			
 			const PAGEID=275;

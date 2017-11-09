@@ -174,7 +174,7 @@ var feed = new Instafeed({
 			 var urlCheck = $('input[name=url]', '#formID').val();
 			 
 			 if(urlCheck ==''){
-				 	console.log("url check empty No robot here")
+				 	//console.log("url check empty No robot here")
 				 }
 			 
 			 var url ='/assets/lib/swift4/index.php';
@@ -183,7 +183,7 @@ var feed = new Instafeed({
 			 $(this).find('#submit').val('Sending...');
 			 
 			 var jqxhr = $.post( url, data, function(response) {
-				  console.log(response);
+				//  console.log(response);
 				  var Message;
 				  var MessageClass;
 				  if(response == 1)
@@ -269,7 +269,7 @@ $('.products-by-type').on('click',function(){
 			 $(this).find('.btn-submit').html('Sending...');
 			 
 			 var jqxhr = $.post( url, data, function(response) {
-				  console.log(response);
+				  // console.log(response);
 				  var Message;
 				  var MessageClass;
 				  if(response == 1)

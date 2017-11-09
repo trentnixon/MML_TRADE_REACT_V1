@@ -25,23 +25,29 @@ class ContactForm extends React.Component {
 	let Value = event.target.value;
 	let Type = event.target.type;
 	let Name = event.target.name;
-	console.log(Value);
+	//console.log(Value);
 	
 	// Check that the input is Text Only
 	if(Type == 'text')
 		{
 			if (IsLetter.test(Value)){  this.props.dispatch(inputTrue(Name)) }
-			else{ console.log("This is not text") }
+			else{ 
+					//console.log("This is not text") 
+			}
 			}
 	else if(Type == 'email')
 		{
 			if (IsEmail.test(Value)) { this.props.dispatch(inputTrue(Name))}
-			else { console.log("Email Not Valid")}
+			else { 
+					//console.log("Email Not Valid")
+			}
 			}
 	else if(Type = 'number')
 		{
 			if (isnum.test(Value)) { this.props.dispatch(inputTrue(Name))}
-			else { console.log("Number  Not Valid")}
+			else { 
+				// console.log("Number  Not Valid")
+			}
 			
 			}
   }

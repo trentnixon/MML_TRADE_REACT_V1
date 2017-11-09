@@ -11,8 +11,8 @@ function PageViewed(id)
 		
 function ClientClick(location, value)
 	{
-		console.log(location)
-		console.log(value)
+		//console.log(location)
+		//console.log(value)
 		mixpanel.track("Link Clicked", {
 					"Location": location,
 					"PageName":value,

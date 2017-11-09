@@ -57,7 +57,7 @@ export function inputTrue(input)
 	}
 
 export function Filtered_News(filteredNews){
-	console.log(filteredNews);
+	//console.log(filteredNews);
 	store.dispatch({ type:"FILTERED_NEWS_ITEMS", payload:filteredNews })
    }	
   

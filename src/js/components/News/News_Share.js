@@ -44,26 +44,23 @@ export default class News_Share extends React.Component {
 					<FacebookIcon size={IconSize} round={true} />
 				</FacebookShareButton>
 				</li>
+				
 				<li>				
 				<GooglePlusShareButton url={window.location.href}>
 					<GooglePlusIcon size={IconSize} round={true} />
 				</GooglePlusShareButton>
 				</li>
+				
 				<li>
-				<LinkedinShareButton url={window.location.href}>
+				<LinkedinShareButton url={window.location.href} title={this.props.NewsTitle} description={this.props.NewsExtract}>
 					<LinkedinIcon size={IconSize} round={true} />
 				</LinkedinShareButton>
 				</li>
 				
 				<li>
-				<TwitterShareButton url={window.location.href}>
+				<TwitterShareButton url={window.location.href} title={this.props.NewsTitle}>
 					<TwitterIcon size={IconSize} round={true} />
 				</TwitterShareButton>
-				</li>
-				<li>
-					<EmailShareButton url={window.location.href}>
-						<EmailIcon size={IconSize} round={true} />
-					</EmailShareButton>
 				</li>
 			</ul>
 	   </div>

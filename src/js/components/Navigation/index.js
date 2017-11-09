@@ -16,10 +16,10 @@ export default class Navigation extends React.Component {
 		
 		var Location = this.props.location.pathname;
 		
-		console.log(Location, this.props.location);
+		// console.log(Location, this.props.location, Location.indexOf("/news"));
 		
 		if(Location == '/information') { DisplayNav =   <NavInvestor /> ;}
-		else if(Location == '/news') { DisplayNav =   <NavNews /> ;}
+		else if(Location.indexOf("/news") == 0) { DisplayNav =   <NavNews /> ;}
 		else { DisplayNav = <NavList />;}
 				
 	}

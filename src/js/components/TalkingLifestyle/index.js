@@ -46,7 +46,7 @@ export default class Showcase extends React.Component {
  
 	componentWillMount(){
 			
-			console.log(this.props.Content.Showcase);
+			//console.log(this.props.Content.Showcase);
 			
 			DisplayProjects = this.CreateShowcase(this.props.Content.Showcase) 
 			
@@ -61,7 +61,7 @@ export default class Showcase extends React.Component {
 	shouldComponentUpdate(nextProps, nextState){ return true;}
 
 	componentWillUpdate(nextProps, nextState){
-		console.log(nextProps.Content.Showcase);
+		//console.log(nextProps.Content.Showcase);
 		
 		if(_.isEmpty(nextProps.Content.Showcase) == false && nextProps.UI != null){
 			

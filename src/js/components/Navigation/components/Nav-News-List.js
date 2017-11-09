@@ -16,6 +16,7 @@ export default class NavigationBurger extends React.Component {
 				<div>
 					<Scrollspy items={ ['Annual_Reports', 'Media_Release', 'Work_place', 'MM_Announcements','Contact',] }  currentClassName="is-current" offset={80} class="nav navbar-nav navbar-right" >
 						<li><Link to="/" >Home</Link></li>
+						<li><Link pageid='255' to="/news" >News</Link></li>
 						<li><Link to="/information" >Investors</Link></li>
 				 	 </Scrollspy>
 				</div>					

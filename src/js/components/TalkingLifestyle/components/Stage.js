@@ -33,7 +33,7 @@ export default class ShowcaseStage extends React.Component {
 	
 	createStage(project){
 			
-		console.log(project)
+		//console.log(project)
 			
 		// Create Stage
 			CreateBackgroundImage = project.acf.cs_background_image.sizes.large

@@ -28,10 +28,10 @@ class ContactForm extends React.Component {
 				data: jQuery( 'form' ).serialize()
 		  })
 		  .done(function(data) {
-			console.log(data);
+			//console.log(data);
 		  })
 		  .fail(function(jqXhr) {
-			console.log('failed to register');
+			//console.log('failed to register');
 		  });
 
 

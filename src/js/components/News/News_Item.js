@@ -19,8 +19,10 @@ export default class Show_a_News_Item extends React.Component {
 			return List.map((article,i)=>{
 				if(article.slug === SLUG)
 					{
-						console.log(article.acf.header_image, article.acf.audio_link);
-						
+						//console.log(article.acf.header_image, article.acf.audio_link);
+						// CLear Media
+						News_Audio='';
+						News_Video='';
 						
 						if(article.acf.audio_link != ""){
 							News_Audio = <Audio audio={article.acf.audio_link} />
@@ -33,8 +35,10 @@ export default class Show_a_News_Item extends React.Component {
 						/*Amend Site Meta data */
 						$('title').text(entities.decode(article.title.rendered));
     					$('meta[name=description]').attr('content', entities.decode(article.title.rendered));
+						$('meta[name=ogdescription]').attr('content', entities.decode(article.title.rendered));
 						$('meta[name=ogtitle]').attr('content', entities.decode(article.title.rendered));
 						$('meta[name=ogurl]').attr('content', window.location.href);
+						$('meta[name=ogimage]').attr('content', article.acf.news_featured_image);
 						
 						
 						 NewsTitle=entities.decode(article.title.rendered);

@@ -47,7 +47,7 @@ export default class Layout extends React.Component {
 
 	shouldComponentUpdate(nextProps, nextState){ return true;}
 	componentWillUpdate(nextProps, nextState){ 
-		console.log(nextProps)
+		//console.log(nextProps)
 	
 		this.DisplayNews(nextProps.match.params.news_item, nextProps) 
 		

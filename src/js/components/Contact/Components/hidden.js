@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class ContactForm extends React.Component {
   handleSubmit(val) {
     // Do anything you want with the form value
-    console.log(val);
+    //console.log(val);
   }
 
   render() {

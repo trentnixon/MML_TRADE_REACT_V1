@@ -14,7 +14,7 @@ import News_Item from "./News/News_Item";
 export default class Layout extends React.Component {
   constructor() { super();}
   componentWillMount(){ 
-  	console.log(this.props.match.params.news_item)
+  	//console.log(this.props.match.params.news_item)
   }
   render() {
 	return (

@@ -16,8 +16,20 @@ import Contact from "./Contact/";
 export default class Layout extends React.Component {
   constructor() { super();}
   
+  
   UpdateMeta(){
+	  
 	 	document.body.id = "Main"
+	 	/*Amend Site Meta data */
+		$('title').text("Macquarie Media Limited | ");
+    	$('meta[name=ogtitle]').attr('content', 'Macquarie Media Limited | ');
+		
+		$('meta[name=description]').attr('content', 'Our News Talk stations are home to Australia’s all-time most successful broadcasters. Talking Lifestyle is our new style of talk radio that aspires to be our audience’s second favourite radio station.');
+		$('meta[name=ogdescription]').attr('content', 'Our News Talk stations are home to Australia’s all-time most successful broadcasters. Talking Lifestyle is our new style of talk radio that aspires to be our audience’s second favourite radio station.');
+		
+		$('meta[name=ogurl]').attr('content', window.location.href);
+		$('meta[name=ogimage]').attr('content', '');
+	 
 	 }
   componentWillMount(){ 
   		// Change Body ID

@@ -57,7 +57,7 @@
                     t.updateSinglePageInline(result);
 					
 					
-					console.log('the panel loaded')
+					//console.log('the panel loaded')
 					 $('[data-spy="scroll"]').each(function () {
         				$(this).scrollspy('refresh');
     					}); 
