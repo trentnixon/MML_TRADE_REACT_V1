@@ -1,4 +1,22 @@
 //parallax
+jQuery(function ($) {
+	/* You can safely use $ in this code block to reference jQuery */
+
+
+
+$('.VideoModal').on('hidden.bs.modal', function (e) {
+            $('video').each(function() {
+                this.pause();
+            });
+        });
+
+        $('.VideoModal').on('shown.bs.modal', function (e) {
+            $(this).find('video')[0].play();
+        });
+		
+		
+
+
 $(document).ready(function() {
 		// Stop the video from playing
 		// $('.VideoModal').on('hidden.bs.modal', function (e) {
@@ -9,15 +27,13 @@ $(document).ready(function() {
 		// })
 
     setTimeout(function () {
-        $('.VideoModal').on('hidden.bs.modal', function (e) {
-            $('video').each(function() {
-                this.pause();
-            });
-        });
-
-        $('.VideoModal').on('shown.bs.modal', function (e) {
-            $(this).find('video')[0].play();
-        });
-    }, 800)
+        
+    
+	
+	
+	
+	
+	}, 800)
 
 })
+});

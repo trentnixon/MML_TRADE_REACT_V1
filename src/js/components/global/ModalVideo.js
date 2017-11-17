@@ -1,6 +1,21 @@
 import React from "react";
 
 export default class VideoModal extends React.Component {
+	componentDidMount(){
+		
+		
+		$('.VideoModal').on('hidden.bs.modal', function (e) {
+            $('video').each(function() {
+                this.pause();
+            });
+        });
+
+        $('.VideoModal').on('shown.bs.modal', function (e) {
+            $(this).find('video')[0].play();
+	
+        });
+		
+	}
   render() {
     return (
 		<div class="modal fade VideoModal " id={this.props.Modalid} tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">

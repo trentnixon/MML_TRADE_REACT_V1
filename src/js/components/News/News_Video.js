@@ -2,13 +2,15 @@ import React from "react";
 
 export default class DisplayVideo extends React.Component {
 	
-  componentWillMount(){ }
+  componentWillMount(){ 
+ 		console.log(this.props.video)
+ }
 
   render() {
 	return (
        <div class="col-md-8 col-md-offset-2" id="News_Video">
-	   		<video width="100%" controls="">
-				<source src="http://www.macquariemedia.com.au/video/2GB%20873.mp4" type="video/mp4" />
+	   		<video controls width="100%" >
+				<source src={this.props.video} type="video/mp4" />
 			</video>
 	   </div>
     );

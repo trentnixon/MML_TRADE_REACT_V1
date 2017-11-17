@@ -21,14 +21,16 @@ export default class Layout extends React.Component {
   constructor() { super();}
   
   onPageLoad(){
-		var Offset = jQuery("#ScrollToNews").offset().top - 80;
+		
+		var Offset = jQuery("#News_Items_Filter").offset().top - 80;
 		jQuery('html, body').animate({scrollTop: Offset},'slow','swing');
+		
 	}
 	
   DisplayNews(news_item, props){
 	 	//  console.log(news_item, props)
 	  	if(news_item != null)
-			{ DisplayTheNews = <News_Item {... props} slug={props.match.params.news_item}/>}
+			{ DisplayTheNews = <News_Item {... props} slug={props.match.params.article}/>}
 		else
 			{ DisplayTheNews = <List_The_News {... props}  />}
 	 }
@@ -38,10 +40,12 @@ export default class Layout extends React.Component {
 	 }
 	 
   componentWillMount(){ 
-  		//console.log(this.props.match.params.news_item);
-  		this.DisplayNews(this.props.match.params.news_item, this.props) 
+  		//console.log(this.props.match.params.article);
+  		this.DisplayNews(this.props.match.params.article, this.props) 
 		// Change Body ID		
 		this.UpdateMeta();
+		
+		
 	}
 	
 
@@ -49,7 +53,7 @@ export default class Layout extends React.Component {
 	componentWillUpdate(nextProps, nextState){ 
 		//console.log(nextProps)
 	
-		this.DisplayNews(nextProps.match.params.news_item, nextProps) 
+		this.DisplayNews(nextProps.match.params.article, nextProps) 
 		
 		// Change Body ID
 		this.UpdateMeta();

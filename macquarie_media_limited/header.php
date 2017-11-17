@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?> class="no-js no-svg">
 <head>
 
-<?php $path='/wp-content/themes/macquarie_media_limited/'; ?>
+<?php $path='/wp-content/themes/macquarie_media_limited_v2/'; ?>
 
 <meta charset="utf-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,6 +27,49 @@
     <meta name="msapplication-TileImage" content="<?php echo $path;?>ico/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
+
+
+
+<?php
+
+// Set up some base variables for the meta data: Then check to see if the User Agent is Facebook.
+// If so, look up the data in WP for the page selected and display the correct meta data
+
+if (
+    strpos($_SERVER["HTTP_USER_AGENT"], "facebookexternalhit/") !== false ||          
+    strpos($_SERVER["HTTP_USER_AGENT"], "Facebot") !== false
+) {
+    // it is probably Facebook's bot
+	// Fetch the details from WP
+	// that is not Facebook
+
+	$Meta_title = 'Macquarie Media Limited';
+	$Meta_Type = 'Article';
+	$Meta_URL = $_SERVER['REQUEST_URI'];
+	$Meta_Image = "";
+	$Meta_Description = "This is a test of the Facebook BOT.";
+
+
+}
+else {
+    // that is not Facebook
+	$Meta_title = 'Macquarie Media Limited';
+	$Meta_Type = 'Website';
+	$Meta_URL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+	$Meta_Image = "";
+	$Meta_Description = "Our News Talk stations are home to Australia’s all-time most successful broadcasters. Talking Lifestyle is our new style of talk radio that aspires to be our audience’s second favourite radio station.";
+	
+}
+
+?>
+
+    <!-- Open Graph data -->
+<meta name="ogtitle" property="og:title" content="<?php echo $Meta_title; ?>" />
+<meta property="og:type" content="<?php echo $Meta_Type; ?>" />
+<meta name="ogurl" property="og:url" content="<?php echo $Meta_URL; ?>" />
+<meta name="ogimage" property="og:image" content="<?php echo $Meta_Image; ?>" />
+<meta name="ogdescription" property="og:description" content="<?php echo $Meta_Description; ?>" />
+<meta property="og:site_name" content="<?php echo $Meta_title; ?>" />
 
     <!-- Latest compiled and minified CSS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">

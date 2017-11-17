@@ -18,7 +18,7 @@ export default class List_The_News extends React.Component {
 				//console.log(article);
 				return(
 						<div key={i} class="col-md-4 newsItem">
-							<img src={article.acf.news_featured_image} class="article_thumb" />
+							<Link to={"/news/"+article.slug} ><img src={article.acf.news_featured_image} class="article_thumb" /></Link>
 							<h1>{entities.decode(article.title.rendered)}</h1>
 							<div dangerouslySetInnerHTML={{__html:article.excerpt.rendered}} /> 
 							<div class="cta">

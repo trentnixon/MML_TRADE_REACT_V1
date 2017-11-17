@@ -14,6 +14,14 @@ import News_Share from "./News_Share";
 let News_Item, News_Audio='', News_Video='', News_Header='', NewsTitle='', NewsExtract='', News_Image='';
 export default class Show_a_News_Item extends React.Component {
 
+
+	onPageLoad(){
+		
+		var Offset = jQuery("#ScrollToNews").offset().top - 80;
+		jQuery('html, body').animate({scrollTop: Offset},'slow','swing');
+		
+	}
+	
 	CreateNewsList(List, SLUG)
 		{
 			return List.map((article,i)=>{
@@ -29,6 +37,7 @@ export default class Show_a_News_Item extends React.Component {
 						}
 						
 						if(article.acf.video_link != ""){
+							console.log(article.acf.video_link);
 							News_Video = <Video video={article.acf.video_link} />
 						}
 						
@@ -39,8 +48,7 @@ export default class Show_a_News_Item extends React.Component {
 						$('meta[name=ogtitle]').attr('content', entities.decode(article.title.rendered));
 						$('meta[name=ogurl]').attr('content', window.location.href);
 						$('meta[name=ogimage]').attr('content', article.acf.news_featured_image);
-						
-						
+			
 						 NewsTitle=entities.decode(article.title.rendered);
 						 NewsExtract=entities.decode(article.title.rendered);
 						 News_Header = article.acf.header_image;
@@ -61,11 +69,24 @@ export default class Show_a_News_Item extends React.Component {
 					)
 				}
 			})
+			
 	}
-  componentWillMount(){ 	
+  componentWillMount(){ 
 	 News_Item = this.CreateNewsList(this.props.NEWS_ITEMS, this.props.slug)
+	 
   }
+  
+  componentDidMount(){
+	 
+	  setTimeout(function(){ 
+			var Offset = jQuery("#ScrollToNews").offset().top - 80;
+			jQuery('html, body').animate({scrollTop: Offset},'slow','swing');
+		
+		 },800)
+	 
+	 }
   render() {
+	
 	return (
        <section class="secondary" id="News_Items" >
 	   		<NewsHeader image={News_Header} />

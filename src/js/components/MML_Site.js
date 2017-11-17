@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 // Import Router
-	import { HashRouter as Router, Route, Link} from 'react-router-dom';
+	import { BrowserRouter as Router, Route, Link,Redirect,Switch} from 'react-router-dom';
 	import createBrowserHistory from 'history/createBrowserHistory'
 	const customHistory = createBrowserHistory()
 
@@ -17,16 +17,19 @@ import ReactDOM from "react-dom";
 
 // Dev Path
 	let DevPath ="/";	
-	
+	// history={customHistory} 
 	const MMTradeSite = () => (
-	  <Router MMLTrade="MMLTrade" history={customHistory} >
+	  <Router MMLTrade="MMLTrade" basename="/" >
 		<div>
 			<Hero history={customHistory} />
 				<div id="Page-Content">
-		 	 		<Route exact path={DevPath} component={Home}/>
-					<Route exact path={DevPath+'information'} component={investorInformation}/>
-					<Route exact path={DevPath+'news'} component={MML_News}/>
-					<Route path={DevPath+'news/:news_item'} component={MML_News}/>
+					<Switch>
+		 	 			<Route exact path={DevPath} component={Home}/>
+						<Route exact path={DevPath+'information'} component={investorInformation}/>
+						<Route exact path={DevPath+'news'} component={MML_News}/>
+						<Route path={DevPath+'news/:article'} component={MML_News}/>
+						<Route path={DevPath+'news_item/:article'} component={MML_News}/>
+					</Switch>
 				</div>
 			<Footer />
 		</div>
