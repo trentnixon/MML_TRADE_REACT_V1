@@ -86,10 +86,10 @@ export default class Show_a_News_Item extends React.Component {
 	 
 	 }
   render() {
-	
+	/** <NewsHeader image={News_Header} />  */
 	return (
        <section class="secondary" id="News_Items" >
-	   		<NewsHeader image={News_Header} />
+	   		
 	  		
 			<div class="container" id="ScrollToNews">
 				{News_Item}

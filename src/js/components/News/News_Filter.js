@@ -110,21 +110,28 @@ export default class News_Filter extends React.Component {
 	}
   	
 	render() {
+/*
+		Old Select Category Code. 
+		Keep here incase it was to be returned. To re apply, insert after input div
+		
+		<div class="col-md-3">
+			<select className="form-control form-control-lg" onChange={this.filterCat.bind(this)} >
+				<option value="" >All</option>
+					{Selectcategories}
+			</select>
+		</div>
+
+*/
 		return (
        	<section id="News_Items_Filter" >
 	  		<div class="container">
 				<form>
 					<fieldset className="form-group">
-						<div class="col-md-9 nopadding">
-						<input type="text" id="filter" className="form-control form-control-lg" placeholder="Filter Articles" onChange={this.filterList.bind(this)}/>
+						<div class="col-md-12 nopadding">
+							<input type="text" id="filter" className="form-control form-control-lg" placeholder="Filter Articles" onChange={this.filterList.bind(this)}/>
 						</div>
-					<div class="col-md-3">
-						 <select className="form-control form-control-lg" onChange={this.filterCat.bind(this)} >
-							<option value="" >All</option>
-						 	{Selectcategories}
-						</select>
-					</div>
-				</fieldset>
+						
+					</fieldset>
 				</form>
 				{Title}
 				{content}
